@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b1a1a92e2f6944779a2ba390c1009cdb" Name="Diagram1">
+        <EntityTypeShape EntityType="UcommerceDbModel.AdminUser" Width="1.5" PointX="10.5" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.Archive" Width="1.5" PointX="13.5" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.Brand" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.Category" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.City" Width="1.5" PointX="3" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.CloseType" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.Comment" Width="1.5" PointX="13.5" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.Condition" Width="1.5" PointX="3" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.Country" Width="1.5" PointX="0.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.LoginHistory" Width="1.5" PointX="10.5" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.Message" Width="1.5" PointX="13.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.Product" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.ProductColsed" Width="1.5" PointX="7.5" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.ProductImage" Width="1.5" PointX="7.5" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.ProductLike" Width="1.5" PointX="10.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.ProductRating" Width="1.5" PointX="16.5" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.ProductVerified" Width="1.5" PointX="15.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.User" Width="1.5" PointX="8.25" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.UsersVerified" Width="1.5" PointX="10.5" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.vwNonVerifiedUser" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UcommerceDbModel.vwVerifiedUser" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="UcommerceDbModel.FK_AdminUser_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK_ProductVerified_AdminUser1" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__Archive__Product__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__Archive__UserId__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__Brand__CountryId__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__Product__BrandId__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__Category__Catego__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__Product__IP__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__City__CountryId__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__Users__CityId__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK_ProductColsed_CloseType" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__Comments__Produc__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__Comments__UserId__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__Product__Conditi__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__Users__CountryId__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__LoginHist__UserI__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__Messages__Produc__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__Messages__UserId__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__Product__UserId__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__ProductIm__Title__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__ProductLi__Produ__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__ProductRa__Produ__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK_ProductColsed_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK_ProductVerified_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__ProductLi__UserI__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK__ProductRa__UserI__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="UcommerceDbModel.FK_UsersVerified_Users" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="UcommerceDbModel.vwVerifiedProduct" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="UcommerceDbModel.vwNonVerifiedProduct" Width="1.5" PointX="3.375" PointY="5.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
