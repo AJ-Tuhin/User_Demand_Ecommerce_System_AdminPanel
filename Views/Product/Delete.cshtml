@@ -1,0 +1,79 @@
+﻿@model uCommerceMVC.Models.Product
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Product</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                Product Info
+            </th>
+            <th>
+                Price Info
+            </th>
+            <th>
+                Product Details
+            </th>
+            <th>
+                User Details
+            </th>
+            <th>
+                Images
+            </th>
+
+            <th></th>
+        </tr>
+
+        <tr>
+            <td>
+                <b>Product Name : </b>@Html.DisplayFor(model => model.Name)<br />
+                <b>Description : </b>@Html.DisplayFor(model => model.Description)<br />
+                <b>Condition : </b>@Html.DisplayFor(model => model.Condition.Name)
+            </td>
+            <td>
+                <b>Regular price : </b>@Html.DisplayFor(model => model.RegularPrice)<br />
+                <b>Offer Price : </b>@Html.DisplayFor(model => model.OfferPrice)<br />
+                <b>Negotiable : </b>@(Model.Negotiable == true ? Html.Raw("Yes") : Html.Raw("No"))
+            </td>
+            <td>
+                <b>Brand : </b>@Html.DisplayFor(model => model.Brand.Name)<br />
+                <b>Category : </b>@Html.DisplayFor(model => model.Category.Name)<br />
+                <b>Links : </b>@Html.DisplayFor(model => model.Links)<br />
+                <b>Video : </b>@Html.DisplayFor(model => model.Video)<br />
+            </td>
+            <td>
+                <b>Uploader : </b>@Html.DisplayFor(model => model.User.Name)<br />
+                <b>Uploader Ip : </b>@Html.DisplayFor(model => model.IP)<br />
+                <b>Uploaded Date : </b>@Html.DisplayFor(model => model.CreateDate)<br />
+            </td>
+            <td>
+                @{
+                    if (Model.ProductImages.Count > 0)
+                    {
+                        var pi = Model.ProductImages.First();
+                        @Html.Raw("<a href=\"../ProductImage?product=" + Model.Id.ToString() + "\"><img src=\"../Upload/ProductImage/" + pi.Id.ToString() + "_" + pi.Image + "\" title=\"Total : " + Model.ProductImages.Count + " Images\" height=\"100\"/></a>")
+                    }
+                    else
+                    {
+                        @Html.Raw("< img src = \"../Upload/UserImages/no image.jpg\" height=\"100\" /> ")
+                    }
+                }
+            </td>
+        </tr>
+
+    </table>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
