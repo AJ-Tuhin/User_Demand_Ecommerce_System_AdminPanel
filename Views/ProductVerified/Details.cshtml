@@ -1,0 +1,49 @@
+﻿@model uCommerceMVC.Models.ProductVerified
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details Product Verified</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Product Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IP)
+        </dd>
+
+        <dt>
+            Admin Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdminUser.User.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

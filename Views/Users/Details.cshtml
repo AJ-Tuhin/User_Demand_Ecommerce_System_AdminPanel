@@ -1,0 +1,68 @@
+﻿@model uCommerceMVC.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details User</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Basic
+        </dt>
+
+        <dd>
+            <b>Name : </b>@Html.DisplayFor(model => model.Name)<br/>
+            <b>Contact : </b>@Html.DisplayFor(model => model.Contact)<br />
+            <b>Email : </b>@Html.DisplayFor(model => model.Email)<br />
+            <b>Gender : </b>@(Model.Gender == true ? Html.Raw("Male") : Html.Raw("Female"))<br/>
+        </dd>
+        <br/>
+        <dt>
+            Other Info
+        </dt>
+
+        <dd>
+            <b>Join Date : </b>@Html.DisplayFor(model => model.JoinDate)<br />
+            <b>Ip : </b>@Html.DisplayFor(model => model.IP)<br />
+            <b>Date of Birth : </b>@Html.DisplayFor(model => model.DateOfBirth)<br />
+            @if (Model.UsersVerifieds.Count <= 0)
+            {
+                <b>@Html.Raw("Not Verified")</b>
+            }
+            else
+            {
+                <b>@Html.Raw("Verified")</b>
+            }
+            @if (Model.AdminUser != null)
+            {
+                <b>@Html.Raw("Administrator")</b>
+            }
+        </dd>
+        <br />
+        <dt>
+            Address
+        </dt>
+
+        <dd>
+            <b>Address : </b>@Html.DisplayFor(model => model.Address)<br />
+            <b>City : </b>@Html.DisplayFor(model => model.City.Name)<br />
+            <b>Country : </b>@Html.DisplayFor(model => model.Country.Name)<br />
+        </dd>
+        <br />
+        <dt>
+            Images
+        </dt>
+
+        <dd>
+            <img src="~/Upload/UserImages/@(Model.Id + "_" + Model.Image)" height="100"/>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

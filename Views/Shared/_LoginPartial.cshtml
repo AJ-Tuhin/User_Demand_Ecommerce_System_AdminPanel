@@ -1,0 +1,19 @@
+﻿@if (Session["Type"] != null && Session["Type"].ToString() == "Admin")
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="../Users/Logout">Logout</a>
+        </li>
+        <li>
+            <a href="../Users/MyAccount">@Session["Name"].ToString()</a>
+        </li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <a href="../Users/Login">Login</a>
+        </li>
+    </ul>
+}

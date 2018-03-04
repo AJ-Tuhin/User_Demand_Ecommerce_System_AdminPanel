@@ -1,0 +1,99 @@
+﻿@using System.Drawing
+@model IEnumerable<uCommerceMVC.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>User</h2>
+
+<p>
+    @Html.ActionLink("New User", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Basic 
+        </th>
+        <th>
+            Other Info
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Image
+        </th>
+        <th>
+            Activity
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <b>Name : </b>@Html.DisplayFor(modelItem => item.Name)<br/>
+            <b>Contact : </b>@Html.DisplayFor(modelItem => item.Contact)<br />
+            <b>Email : </b>@Html.DisplayFor(modelItem => item.Email)<br />
+            <b>Gender : </b>@if (item.Gender == true)
+                            {
+                                @Html.Raw("Male")
+                            }
+                            else
+                            {
+                                @Html.Raw("Female");
+                            }
+        </td>
+        <td>
+            <b>Join date : </b>@Html.DisplayFor(modelItem => item.JoinDate)<br />
+            <b>Ip : </b>@Html.DisplayFor(modelItem => item.IP)<br />
+            <b>Date Of Birth : </b>@Html.DisplayFor(modelItem => item.DateOfBirth)<br/>
+            @if (item.UsersVerifieds.Count <= 0)
+            {
+                <b>@Html.Raw("Not Verified")</b>
+            }
+            else
+            {
+                <b>@Html.Raw("Verified")</b>  
+            }
+            @if (item.AdminUser != null)
+            {
+                <b>@Html.Raw("Administrator")</b>
+            }
+
+        </td>
+        <td>
+            <address>
+                    <b>Address : </b>@Html.DisplayFor(modelItem => item.Address)<br />
+                    <b>City : </b>@Html.DisplayFor(modelItem => item.City.Name)<br />
+                    <b>Country : </b>@Html.DisplayFor(modelItem => item.Country.Name)<br />
+            </address>
+        </td>
+        <td>
+            @*@if (item.Image == null)
+            {
+
+                < img src = "~/Upload/UserImages/no Image.jpg"  />
+            }
+            else
+            {*@
+                <img src="~/Upload/UserImages/@(item.Id.ToString() + "_" + item.Image)" height="100" />
+           @* }*@
+            
+        </td>
+        <td>
+            <b>Comment : </b>@item.Comments.Count<br/>
+            <b>Like : </b>@item.ProductLikes.Count<br />
+            <b>Rating : </b>@item.ProductRatings.Count<br />
+            <b>Product : </b>@item.Products.Count<br />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
